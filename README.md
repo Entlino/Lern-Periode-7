@@ -14,4 +14,8 @@ Ein weiteres mögliches Projekt wäre die realisation einer Desktopapp welche eb
 Das nächte Projekt welches ich mir überlegt habe könnte eine App sein welche ich entwicklen möchte. Bei diesem Projekt könnte ich mich ebenfalls in eine neue Programmiersprache einarbeiten. Inhaltlich könnte diese App beispielsweise eine schlichte Notizenapp sein, oder ein einfaches Spiel.
 
 
+## Tagesplanung
+### 18.10.2024
+- [ ] Einarbeitung Python
+
 
