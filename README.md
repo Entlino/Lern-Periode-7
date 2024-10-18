@@ -18,4 +18,8 @@ Das nächte Projekt welches ich mir überlegt habe könnte eine App sein welche 
 ### 18.10.2024
 - [ ] Einarbeitung Python
 
+Heute habe ich nebst der Planung von der Lernperiode 7 mich erstmals in Python eingearbeitet. Das Projekt wurde noch nicht final definiert. Die Definition erfolgt am Montag nach einem Gespräch mit Herrn Colic bezüglich dem Thema Machnie Learing und dem potentiellem Austausch eines Modules.
+
+
+
 
