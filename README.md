@@ -20,6 +20,86 @@ Das nächte Projekt welches ich mir überlegt habe könnte eine App sein welche 
 
 Heute habe ich nebst der Planung von der Lernperiode 7 mich erstmals in Python eingearbeitet. Das Projekt wurde noch nicht final definiert. Die Definition erfolgt am Montag nach einem Gespräch mit Herrn Colic bezüglich dem Thema Machnie Learing und dem potentiellem Austausch eines Modules.
 
+## 25.10.2024
+- [ ] Beginn JavaSkript
+- [ ] Kleine "Lern/Demo" website bauen.
+
+Today, I've begun to plan out my Project, whose direction was finalized after a discussion with Mr. Colic on Monday. As we discussed, we came to the point that it would be easier to put Python away for a Moment and wait until we have the opportunity to pick the modul m259, where learning python would be a bigger part. So his advice was to learn JavaScript because it's harder to learn and there aren't any good moduls that should help learn JavaScript. So after all of that, I came to the Point where I decided that my newest Project would be learning JavaScript. Today I began with the basics of learning JavaScript. After a little introduction to JavaScript, I spent the morning building a little Countdown website with JavaScript. The website should be able to take your input of how many seconds the countdown should count down and then actually count down.
 
 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Countdown</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <input type="number" id="startSeconds" placeholder="Startsekunden" />
+    <button id="startButton">Starte Countdown</button>
+    <div id="countdown"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+```
+
+```css
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#countdown {
+  font-size: 3rem;
+  color: #333;
+}
+
+input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+```
+
+```javascript
+const startButton = document.getElementById("startButton");
+const countdownElement = document.getElementById("countdown");
+const startSecondsInput = document.getElementById("startSeconds");
+
+startButton.addEventListener("click", () => {
+  const startSeconds = parseInt(startSecondsInput.value);
+
+  if (isNaN(startSeconds) || startSeconds <= 0) {
+    alert("Bitte gib eine gültige Zahl größer als 0 ein.");
+    return;
+  }
+
+  let timeLeft = startSeconds;
+
+  countdownElement.textContent = timeLeft;
+
+  countdownInterval = setInterval(() => {
+    timeLeft--;
+    countdownElement.textContent = timeLeft;
+
+    if (timeLeft === 0) {
+      clearInterval(countdownInterval);
+      countdownElement.textContent = "Countdown beendet!";
+    }
+  }, 1000);
+});
+
+```
 
