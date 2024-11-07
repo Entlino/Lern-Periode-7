@@ -103,3 +103,161 @@ startButton.addEventListener("click", () => {
 
 ```
 
+## 1.11.2024
+
+Ich habe den Countdown weiter verbessert und habe nun eine Kreis animation hinzugefügt welche den stand des Timers Visuell darstellt.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Ring</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="setup">
+      <label for="duration">Countdown-Dauer (in Minuten):</label>
+      <input type="number" id="duration" min="1" placeholder="z.B. 5" />
+      <button id="startButton">Start</button>
+    </div>
+
+    <div class="countdown-ring" style="display: none">
+      <svg width="300" height="300">
+        <circle cx="150" cy="150" r="140" class="background" />
+        <circle cx="150" cy="150" r="140" class="progress" />
+      </svg>
+      <div class="time-left">00:00:00</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+```
+
+```css
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.setup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  font-size: 1em;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.countdown-ring {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+svg {
+  transform: rotate(-90deg);
+}
+
+circle {
+  fill: none;
+  stroke-width: 15;
+}
+
+.background {
+  stroke: #eee;
+}
+
+.progress {
+  stroke: #76c7c0;
+  stroke-dasharray: 880;
+  stroke-dashoffset: 880;
+  transition: stroke-dashoffset 1s linear;
+}
+
+.time-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: #333;
+}
+
+```
+
+```javascript
+const startButton = document.getElementById("startButton");
+const durationInput = document.getElementById("duration");
+const timeLeftDisplay = document.querySelector(".time-left");
+const progressCircle = document.querySelector(".progress");
+const countdownRing = document.querySelector(".countdown-ring");
+const circleLength = 880;
+let countdownInterval;
+
+startButton.addEventListener("click", () => {
+  const duration = parseInt(durationInput.value) * 60 * 1000;
+
+  if (isNaN(duration) || duration <= 0) {
+    alert("Bitte eine gültige Zeit in Minuten eingeben.");
+    return;
+  }
+
+  const countdownEnd = new Date().getTime() + duration;
+  countdownRing.style.display = "block";
+  document.querySelector(".setup").style.display = "none";
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const timeLeft = countdownEnd - now;
+
+    if (timeLeft > 0) {
+      const seconds = Math.floor((timeLeft / 1000) % 60);
+      const minutes = Math.floor((timeLeft / 1000 / 60) % 60);
+      const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+
+      timeLeftDisplay.textContent = `${String(hours).padStart(2, "0")}:${String(
+        minutes
+      ).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+
+      const progress = circleLength * (1 - timeLeft / duration);
+      progressCircle.style.strokeDashoffset = circleLength - progress;
+    } else {
+      clearInterval(countdownInterval);
+      timeLeftDisplay.textContent = "00:00:00";
+      progressCircle.style.strokeDashoffset = circleLength;
+    }
+  }
+
+  countdownInterval = setInterval(updateCountdown, 1000);
+});
+
+```
