@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Ring</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="setup">
+      <label for="duration">Countdown-Dauer (in Minuten):</label>
+      <input type="number" id="duration" min="1" placeholder="z.B. 5" />
+      <button id="startButton">Start</button>
+    </div>
+
+    <div class="countdown-ring" style="display: none">
+      <svg width="300" height="300">
+        <circle cx="150" cy="150" r="140" class="background" />
+        <circle cx="150" cy="150" r="140" class="progress" />
+      </svg>
+      <div class="time-left">00:00:00</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
