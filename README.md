@@ -261,3 +261,16 @@ startButton.addEventListener("click", () => {
 });
 
 ```
+
+
+## 08.11.2024
+
+Heute habe ich wie die letzen Wochen an meinem Countdown gearbeitet. Heute habe ich erstmals damit begonnen die Website ansprechender zu gestalten. Als ich dies erledigt habe habe ich mich wieder um den Countdown gekümmert, bei welchem ich den Kreis welcher den Countdown visuell darstellt angepasst damit dieser nun in unterschiedlichen Fraben erscheint. Die Farben sind je nach übrigbleibender Zeit anders.
+
+![image](https://github.com/user-attachments/assets/786f7b19-ebb4-4e8e-a0be-bca590d5750f)
+
+![image](https://github.com/user-attachments/assets/3a5d6ef0-bdab-48f4-ac91-c9b2c33eb972)
+
+![image](https://github.com/user-attachments/assets/07eb1f9b-36fb-4234-9274-ab9c030a9ee6)
+
+
