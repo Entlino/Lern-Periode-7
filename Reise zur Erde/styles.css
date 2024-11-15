@@ -1,0 +1,74 @@
+/* Allgemeines Styling */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  height: 600vh; /* Lange Seite für Scrollen */
+}
+
+/* Fixierte Sterne */
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #000014, #05003b, #000014);
+  z-index: -2;
+}
+
+#interactiveCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Infosektionen */
+.info-section {
+  position: relative;
+  width: 80%;
+  margin: 50vh auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Fun Facts - Große Boxen mit Abstand */
+#fact-section {
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.fact-box {
+  background: rgba(255, 255, 255, 0.3);
+  margin: 20px 0; /* Abstand zwischen den Boxen */
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  width: 80%; /* Gleiche Breite wie die Bevölkerung-Box */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Sterne und Hintergrund */
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #000014, #05003b, #000014);
+  z-index: -2;
+}
