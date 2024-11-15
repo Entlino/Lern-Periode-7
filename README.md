@@ -274,3 +274,8 @@ Heute habe ich wie die letzen Wochen an meinem Countdown gearbeitet. Heute habe 
 ![image](https://github.com/user-attachments/assets/07eb1f9b-36fb-4234-9274-ab9c030a9ee6)
 
 
+
+## 15.11.2024
+
+Heute habe ich ein neues Projekt begonnen, welches anspruchsvoller ist als die Countdown-Website, und zwar bin ich an einer Website am Arbeiten, bei welcher man im All startet, und dann zur Erde "runterscrollen" kann. Um auf diesem Weg nicht gelangweilt zu sein, gibt es im Hintergrund animierte farbige Bälle, welche herumschwirren, und im Vordergrund gibt es Informationen und Fakten über die Erde, wie beispielsweise die aktuelle Weltbevölkerung. Diese wollte ich zuerst via API jederzeit aktuell auslesen, jedoch hat mir das relativ lange Problem bereitet, wieso ich diesen Schritt erstmals übersprungen und eine Zahl eingeschrieben habe. Dies möchte ich jedoch später nochmals ändern. Wenn man nun am Ende seiner Reise zur Erde angekommen ist, sollte man wie in Google Maps die Erde sehen. Also zuerst diese Halbkugel und dann, wenn man weiter scrollt, soll automatisch auf den eigenen Standort gezoomt werden, welcher vorher ausgelesen werden soll. Wie und ob das Ganze überhaupt so möglich ist, muss ich erstmals noch schauen. 
+
