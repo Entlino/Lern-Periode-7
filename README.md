@@ -289,3 +289,7 @@ Heute habe ich weiterhin an meiner Website "Die Reise zur Erde" gearbeitet, dabe
 ## 29.11.2024
 
 So today, i've reworked my former project "Reise zur Erde" to "Sonnensystem" in this newer projekt, the goal isn't to reach the earth and learn something about it. It's to start at the end of our solarsystem and reach down for the sun, on your way down there, your gonna pass all the other planets in our solarsystem and learn something about them. A more detailed, explantion is in my Video documentary.
+
+
+## 20.12.2024
+Heute habe ich die Website grundlegend verändert, ich habe über die letzten Tage den Hintergrund erstellt, dabei habe ich einen Sternenhimmel erstellt. Um das ganze dann noch aufzulockern habe ich zusätzlich noch Sternschnuppen sowie UFO's hinzugefügt. 
