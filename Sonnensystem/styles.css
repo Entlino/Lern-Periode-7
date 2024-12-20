@@ -1,3 +1,4 @@
+/* Basis-Stile */
 * {
   margin: 0;
   padding: 0;
@@ -5,23 +6,38 @@
 }
 
 body {
-  background-color: #1e1e1e;
+  background-color: black;
+  background-size: 100px 100px, cover;
+  background-repeat: repeat, no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   color: white;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
-  height: 100vh;
+  min-height: 100%;
 }
 
+/* Überschriften */
 h2 {
   margin-bottom: 10px;
 }
 
+/* Keyframe-Animationen */
 @keyframes horizontal-rotate {
   from {
     background-position-x: 0;
   }
   to {
     background-position-x: 100%;
+  }
+}
+
+@keyframes planet-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
@@ -62,7 +78,6 @@ h2 {
   width: 100px;
   height: 100px;
   background-image: url("images/mars.jpg");
-  background-position: center top;
 }
 
 #earth {
@@ -81,21 +96,23 @@ h2 {
   width: 70px;
   height: 70px;
   background-image: url("images/mercury.jpg");
-  background-position: center top;
 }
+
 #sun {
   width: 600px;
   height: 600px;
   background-image: url("images/sun.jpg");
 }
 
+/* Abschnitte */
 .section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 100px 0;
-  height: 100vh;
+  margin: 100px 0; /* Abstand zwischen den Planetenabschnitten */
+  height: 100vh; /* Automatische Höhe basierend auf Inhalt */
+  position: relative;
 }
 
 .fact-box {
@@ -117,30 +134,55 @@ h2 {
   font-size: 16px;
 }
 
-body {
-  background-image: url("images/space-background.jpg");
-  background-position: center;
-  background-attachment: fixed;
+/* Hintergrundsterne */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -2;
 }
 
-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: 100vh;
-}
-
-section .planet {
+.star {
   position: absolute;
-  animation: planet-rotation 50s infinite linear;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
 }
 
-@keyframes planet-rotation {
-  0% {
-    transform: rotate(0deg);
+/* UFO */
+.ufo {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  background: silver;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0, 255, 0, 0.7), 0 -5px 10px rgba(0, 255, 0, 0.4);
+}
+
+.shooting-star {
+  position: fixed;
+  width: 2px;
+  height: 50px;
+  background: linear-gradient(to top, white, transparent);
+  opacity: 0.8;
+  transform: rotate(-45deg);
+  pointer-events: none;
+  z-index: -1;
+  animation: shooting-star-animation 5s ease-in-out forwards;
+}
+
+@keyframes shooting-star-animation {
+  from {
+    transform: translate(0, 0) rotate(-45deg);
+    opacity: 1;
   }
-  100% {
-    transform: rotate(360deg);
+  to {
+    transform: translate(300px, 300px) rotate(-45deg);
+    opacity: 0;
   }
 }
